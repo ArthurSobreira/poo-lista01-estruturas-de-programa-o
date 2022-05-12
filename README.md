@@ -6,4 +6,4 @@ Resolução da Lista de Exercícios 01, abordando os assuntos: **Estruturas de P
 
 A resolução dos exercícios será por meio do **Paradigma Procedural**, por meio de funções e variáveis locais.
 
-~André Santanchè - 2011
+~André Santanchè 2011
