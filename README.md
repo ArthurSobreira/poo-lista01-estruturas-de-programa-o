@@ -1,7 +1,5 @@
-# poo-lista01-estruturas-de-programacao
+# Resolução - Lista de Exercícios 01 POO - Universidade Estadual de Campinas
 
-Lista de Exercícios - MC302 – Programação Orientada a Objetos
+link: https://www.ic.unicamp.br/~santanch/teaching/oop/2015-1/exercicios/poo-exercicios-01-estruturas-v01.pdf
+MC302 – Programação Orientada a Objetos | Estruturas de Programação, Funções e Vetores - André Santanchè 2011
 
-Instituto de Computação - Universidade Estadual de Campinas (UNICAMP)
-
-Estruturas de Programação, Funções e Vetores - André Santanchè 2011
