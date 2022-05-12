@@ -1,5 +1,9 @@
-# Resolução - Lista de Exercícios 01 POO - Universidade Estadual de Campinas
+# Resolução: Lista de Exercícios 01 - Universidade Estadual de Campinas (UNICAMP)
 
-link: https://www.ic.unicamp.br/~santanch/teaching/oop/2015-1/exercicios/poo-exercicios-01-estruturas-v01.pdf
-MC302 – Programação Orientada a Objetos | Estruturas de Programação, Funções e Vetores - André Santanchè 2011
+Link: https://www.ic.unicamp.br/~santanch/teaching/oop/2015-1/exercicios/poo-exercicios-01-estruturas-v01.pdf
 
+Resolução da Lista de Exercícios 01, abordando os assuntos: **Estruturas de Programação**, **Funções** e **Vetores**.
+
+A resolução dos exercícios será por meio do **Paradigma Procedural**, por meio de funções e variáveis locais.
+
+~André Santanchè - 2011
