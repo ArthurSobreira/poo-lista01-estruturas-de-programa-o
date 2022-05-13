@@ -8,3 +8,11 @@ def input_number(msg):
         else:
             return number
 
+
+def main():
+    number = input_number('Enter a number to see your binary conversion: ')
+    print(f'The binary conversion of the number {number} is: {bin(number)}.')
+
+
+if __name__ == '__main__':
+    main()
