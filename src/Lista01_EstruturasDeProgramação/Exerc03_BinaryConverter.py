@@ -1,7 +1,7 @@
-def input_number(msg):
+def input_number(msg, type=int):
     while True:
         try:
-            number = int(input(msg))
+            number = type(input(msg))
         except (ValueError, TypeError):
             print('\033[31mInvalid Value, Try Again!\033[m')
             continue
