@@ -9,8 +9,8 @@ def addition(salary):
         return 10
 
 
-def readjustment(salary, percentage):
-    perc = salary * (percentage / 100)
+def readjustment(salary, percent):
+    perc = salary * (percent / 100)
     return salary + perc
 
 
