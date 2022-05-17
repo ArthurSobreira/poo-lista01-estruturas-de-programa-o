@@ -12,8 +12,8 @@ def palindrome(text):
 
 
 def main():
-    word = str(input('Enter a word or phrase to check if it is a Palindrome: '))
-    if palindrome(word):
+    word_phrase = str(input('Enter a word or phrase to check if it is a Palindrome (Without Accent): '))
+    if palindrome(word_phrase):
         print('Is a Palindrome.')
     else:
         print('Not a Palindrome.')
