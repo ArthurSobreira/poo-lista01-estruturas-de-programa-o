@@ -1,12 +1,12 @@
-def palindrome(word):
-    word_list = []
-    for c in word:
+def palindrome(text):
+    text_list = []
+    for c in text:
         if c.isalpha():
-            word_list.append(c.lower())
+            text_list.append(c.lower())
 
-    reversed_list = word_list[::-1]
+    reversed_list = text_list[::-1]
 
-    if word_list == reversed_list:
+    if text_list == reversed_list:
         return True
     return False
 
