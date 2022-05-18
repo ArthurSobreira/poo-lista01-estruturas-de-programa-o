@@ -1,3 +1,6 @@
+from Exerc03_BinaryConverter import *
+
+
 def prime_number(number):
     primes_list = []
     for c in range(1, (number + 1)):
@@ -13,3 +16,13 @@ def prime_number(number):
     return False
 
 
+def main():
+    num = input_number('Enter a number to check if it is a Prime Number: ')
+    if prime_number(num):
+        print(f'{num} is a Prime Number.')
+    else:
+        print(f'{num} is not a Prime Number.')
+
+
+if __name__ == '__main__':
+    main()
