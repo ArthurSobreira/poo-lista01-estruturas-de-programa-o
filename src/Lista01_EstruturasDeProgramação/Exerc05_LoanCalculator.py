@@ -1,5 +1,4 @@
 from Exerc03_BinaryConverter import *
-from math import *
 
 
 def interest_calculator(capital, fee):
@@ -11,12 +10,12 @@ def main():
     loan = input_number('Enter the loan value: R$ ', float)
     portion = input_number('Enter the value of the payment installment: R$ ', float)
     fees = input_number('Enter the fee value: % ')
-    interest = interest_calculator(loan, fees)
+    interest = interest_calculator(portion, fees)
 
     total_inter = interest
     debt = loan - (portion - interest)
     c = 1
-    while debt > 0:
+    while debt != 0:
         print()
         print(f'================= {c}st Month =================')
         print(f'> Value of interest paid: R${interest:.2f}')
@@ -24,8 +23,10 @@ def main():
         print(f'> Accumulated interest value: R${total_inter:.2f}')
         print(f'> Loan value still to be paid: R${debt:.2f}')
         total_inter += interest
-        debt -= portion - interest
+        debt -= (portion - interest)
         c += 1
+        if debt < portion:
+            portion = debt + interest
 
 
 if __name__ == '__main__':
