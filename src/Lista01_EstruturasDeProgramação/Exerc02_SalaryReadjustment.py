@@ -35,6 +35,7 @@ def main():
         list_new_sal.append(new_salary)
         print_info(name, salary, new_salary)
 
+    print()
     print(f'Sum of the Current Salaries: R${sum(list_current_sal):.2f}\n'
           f'Sum of the Readjusted Salaries: R${sum(list_new_sal):.2f}\n'
           f'Difference between the sum of salaries: {(sum(list_new_sal) - sum(list_current_sal)):.2f}')
