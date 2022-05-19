@@ -14,11 +14,10 @@ def main():
 
     total_inter = interest
     debt = loan - (portion - interest)
-    c = 1
-    month_counter = last_portion = 0
+    month_counter = last_portion = c = 0
     while debt != 0:
         print()
-        print(f'================= {c}st Month =================')
+        print(f'================= {c + 1}st Month =================')
         print(f'> Value of interest paid: R${interest:.2f}\n'
               f'> Value applied in the loan payment: R${portion - interest:.2f}\n'
               f'> Accumulated interest value: R${total_inter:.2f}\n'
@@ -26,10 +25,10 @@ def main():
         total_inter += interest
         last_portion = debt
         debt -= (portion - interest)
-        c += 1
         if debt < portion:
             portion = debt + interest
         month_counter += 1
+        c += 1
     print()
     print(f'Loan paid off, It took {month_counter} months for the payment, and the last\n'
           f'installment was R${last_portion:.2f}')
