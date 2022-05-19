@@ -18,10 +18,10 @@ def main():
     while debt != 0:
         print()
         print(f'================= {c}st Month =================')
-        print(f'> Value of interest paid: R${interest:.2f}')
-        print(f'> Value applied in the loan payment: R${portion - interest:.2f}')
-        print(f'> Accumulated interest value: R${total_inter:.2f}')
-        print(f'> Loan value still to be paid: R${debt:.2f}')
+        print(f'> Value of interest paid: R${interest:.2f}\n'
+              f'> Value applied in the loan payment: R${portion - interest:.2f}\n'
+              f'> Accumulated interest value: R${total_inter:.2f}\n'
+              f'> Loan value still to be paid: R${debt:.2f}')
         total_inter += interest
         debt -= (portion - interest)
         c += 1
