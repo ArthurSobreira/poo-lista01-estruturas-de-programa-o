@@ -17,9 +17,9 @@ def main():
     number = input_number('Enter the number to verify if it pertains to the Fibonacci sequence: ')
     fibo = fibonacci(number)
     if number in fibo:
-        print(f'The {number} is in the Fibonacci Sequence.')
+        print(f'The number {number} is in the Fibonacci Sequence.')
     else:
-        print(f'The {number} is not in the Fibonacci Sequence.')
+        print(f'The number {number} is not in the Fibonacci Sequence.')
 
 
 if __name__ == '__main__':
