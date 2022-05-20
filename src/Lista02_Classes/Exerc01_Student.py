@@ -12,4 +12,8 @@ class Student:
         final_note = test_sum + work_sum
         return final_note
 
-
+    def final(self, note):
+        if note >= 6:
+            return 0
+        final_test = 12 - note
+        print(f'Student {self.name} must get a {final_test} on the final test to pass.')
