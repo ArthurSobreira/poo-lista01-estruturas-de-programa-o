@@ -9,11 +9,11 @@ class Student:
     # Getter and Setter __name
     @property
     def name(self):
-        return self.name
+        return self.__name
 
     @name.setter
     def name(self, new_name):
-        self.name = new_name
+        self.__name = new_name
 
     # Getter and Setter __test_1_note
     @property
@@ -43,16 +43,10 @@ class Student:
         self.__work_note = new_note
 
 
-class Notes:
-    def __init__(self):
-        self.__name = Student.name
-        self.__test_1_note = Student.test_1_note
-        self.__test_2_note = Student.test_2_note
-        self.__work_note = Student.work_note
-
+class Notes(Student):
     def average(self):
-        test_sum = ((self.__test_1_note + self.__test_2_note) * 8) / 20
-        work_sum = (self.__work_note * 2) / 10
+        test_sum = ((self.test_1_note + self.test_2_note) * 8) / 20
+        work_sum = (self.work_note * 2) / 10
         final_note = test_sum + work_sum
         return final_note
 
@@ -60,5 +54,9 @@ class Notes:
         if note >= 6:
             return 0
         final_test = 12 - note
-        print(f'Student {self.__name} must get a {final_test} on the final test to pass.')
-        
+        print(f'Student {self.name} must get a {final_test} on the final test to pass.')
+
+
+if __name__ == '__main__':
+    main
+
