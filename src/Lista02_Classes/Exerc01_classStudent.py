@@ -4,16 +4,41 @@ class Student:
         self.__test_1_note = test_1_note
         self.__test_2_note = test_2_note
         self.__work_note = work_note
-        self.name = name
+        self.__name = name
 
-    def average(self):
-        test_sum = ((self.__test_1_note + self.__test_2_note) * 8) / 20
-        work_sum = (self.__work_note * 2) / 10
-        final_note = test_sum + work_sum
-        return final_note
+    # Getter and Setter __name
+    @property
+    def name(self):
+        return self.name
 
-    def final(self, note):
-        if note >= 6:
-            return 0
-        final_test = 12 - note
-        print(f'Student {self.name} must get a {final_test} on the final test to pass.')
+    @name.setter
+    def name(self, new_name):
+        self.name = new_name
+
+    # Getter and Setter __test_1_note
+    @property
+    def test_1_note(self):
+        return self.__test_1_note
+
+    @test_1_note.setter
+    def test_1_note(self, new_note):
+        self.__test_1_note = new_note
+
+    # Getter and Setter __test_2_note
+    @property
+    def test_2_note(self):
+        return self.__test_2_note
+
+    @test_2_note.setter
+    def test_2_note(self, new_note):
+        self.__test_2_note = new_note
+
+    # Getter and Setter __work_note
+    @property
+    def work_note(self):
+        return self.__work_note
+
+    @work_note.setter
+    def work_note(self, new_note):
+        self.__work_note = new_note
+
