@@ -9,4 +9,7 @@ class Student:
     def average(self):
         test_sum = ((self.__test_1_note + self.__test_2_note) * 8) / 20
         work_sum = (self.__work_note * 2) / 10
-        return test_sum + work_sum
+        final_note = test_sum + work_sum
+        return final_note
+
+
