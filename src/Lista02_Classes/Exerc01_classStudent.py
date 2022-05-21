@@ -56,3 +56,37 @@ class StudentsNotes(Student):
         final_test = 12 - note
         print(f'Student {self.name} must get a {final_test} on the final test to pass.')
 
+
+class StudentManage:
+    @staticmethod
+    def apart(msg, size):
+        print('=' * size)
+        print(f'{msg:^{size}}')
+        print('=' * size)
+
+    @staticmethod
+    def input_value(msg, type=int):
+        while True:
+            try:
+                number = type(input(msg))
+            except (ValueError, TypeError):
+                print('\033[31mInvalid Value, Try Again!\033[m')
+                continue
+            else:
+                return number
+
+    @classmethod
+    def main(cls):
+        cls.apart('Wellcome to the Student Manage', 50)
+        reg = cls.input_value("Enter the student's matriculation number: ", int)
+        name = cls.input_value('Enter the student name: ', str). strip().title()
+        test_sco_1 = cls.input_value('Enter the test score 1: ', float)
+        test_sco_2 = cls.input_value('Enter the test score 2: ', float)
+        work_sco = cls.input_value('Enter the work score: ', float)
+        student = StudentsNotes(reg, name, test_sco_1, test_sco_2, work_sco)
+        print(student.name)
+
+
+if __name__ == '__main__':
+    StudentManage.main()
+
