@@ -43,7 +43,7 @@ class Student:
         self.__work_note = new_note
 
 
-class Notes(Student):
+class StudentsNotes(Student):
     def average(self):
         test_sum = ((self.test_1_note + self.test_2_note) * 8) / 20
         work_sum = (self.work_note * 2) / 10
@@ -55,8 +55,4 @@ class Notes(Student):
             return 0
         final_test = 12 - note
         print(f'Student {self.name} must get a {final_test} on the final test to pass.')
-
-
-if __name__ == '__main__':
-    main
 
