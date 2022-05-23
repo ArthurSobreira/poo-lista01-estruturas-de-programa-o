@@ -57,5 +57,3 @@ class StudentManage:
         test_sco_2 = cls.input_value('Enter the test Score 2: ', float)
         work_sco = cls.input_value('Enter the work score: ', float)
         return StudentsNotes(reg, name, test_sco_1, test_sco_2, work_sco)
-
-
