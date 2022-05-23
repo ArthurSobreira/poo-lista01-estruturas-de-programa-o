@@ -51,19 +51,14 @@ class StudentsNotes(Student):
         return final_note
 
     def final(self, note):
-        if note <= 6:
+        if note >= 6:
             print(f'Student {self.name} is not in recovery.')
-        final_test = 12 - note
-        print(f'Student {self.name} must get a {final_test} on the final test to pass.')
+        else:
+            final_test = 12 - note
+            print(f'Student {self.name} must get a {final_test} on the final test to pass.')
 
 
 class StudentManage:
-    @staticmethod
-    def apart(msg, size):
-        print('=' * size)
-        print(f'{msg:^{size}}')
-        print('=' * size)
-
     @staticmethod
     def input_value(msg, type=int):
         while True:
@@ -75,6 +70,12 @@ class StudentManage:
             else:
                 return number
 
+    @staticmethod
+    def apart(msg, size):
+        print('=' * size)
+        print(f'{msg:^{size}}')
+        print('=' * size)
+
     @classmethod
     def register(cls):
         cls.apart('Wellcome to the Student Manage', 50)
@@ -84,3 +85,31 @@ class StudentManage:
         test_sco_2 = cls.input_value('Enter the test Score 2: ', float)
         work_sco = cls.input_value('Enter the work score: ', float)
         return StudentsNotes(reg, name, test_sco_1, test_sco_2, work_sco)
+
+    @classmethod
+    def main(cls):
+        student = cls.register()
+        while True:
+            print('=' * 50)
+            choice = cls.input_value(
+                    "1 - To view the student's average.\n"
+                    "2 - To view if the student is in recovery.\n"
+                    "3 - To register a new student.\n"
+                    "4 - To go out.\n"
+                    "> ")
+            if choice == 1:
+                note = student.average()
+                print(f"> {student.name}'s average: {note:.2f}")
+                continue
+            if choice == 2:
+                final = student.final(student.average())
+                continue
+            if choice == 3:
+                student = cls.register()
+                continue
+            if choice == 4:
+                break
+
+
+if __name__ == '__main__':
+    StudentManage.main()
