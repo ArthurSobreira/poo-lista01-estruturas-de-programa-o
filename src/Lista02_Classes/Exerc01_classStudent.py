@@ -58,6 +58,16 @@ class StudentsNotes(Student):
 
 
 class StudentManage:
+    @classmethod
+    def register(cls):
+        cls.apart('Wellcome to the Student Manage', 50)
+        reg = cls.input_value("Enter the student's matriculation number: ", int)
+        name = cls.input_value('Enter the student name: ', str).strip().title()
+        test_sco_1 = cls.input_value('Enter the Test Score 1: ', float)
+        test_sco_2 = cls.input_value('Enter the test Score 2: ', float)
+        work_sco = cls.input_value('Enter the work score: ', float)
+        return StudentsNotes(reg, name, test_sco_1, test_sco_2, work_sco)
+
     @staticmethod
     def apart(msg, size):
         print('=' * size)
@@ -74,17 +84,6 @@ class StudentManage:
                 continue
             else:
                 return number
-
-    @classmethod
-    def main(cls):
-        cls.apart('Wellcome to the Student Manage', 50)
-        reg = cls.input_value("Enter the student's matriculation number: ", int)
-        name = cls.input_value('Enter the student name: ', str). strip().title()
-        test_sco_1 = cls.input_value('Enter the test score 1: ', float)
-        test_sco_2 = cls.input_value('Enter the test score 2: ', float)
-        work_sco = cls.input_value('Enter the work score: ', float)
-        student = StudentsNotes(reg, name, test_sco_1, test_sco_2, work_sco)
-        print(student.name)
 
 
 if __name__ == '__main__':
