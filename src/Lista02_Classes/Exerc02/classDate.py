@@ -1,3 +1,6 @@
+import datetime
+
+
 class Date:
     def __init__(self, day, month, year):
         months = [[2], [4, 6, 9, 11], [1, 3, 5, 7, 8, 10, 12]]
@@ -20,10 +23,23 @@ class Date:
                         valid_date = True
 
         if valid_date:
-            self.day, self.month, self.year = day, month, year
+            self.__day, self.__month, self.__year = day, month, year
         else:
-            self.day, self.month, self.year = 1, 1, 1
+            self.__day, self.__month, self.__year = 1, 1, 1
 
-    def leap_year(self):
-        if ((self.year % 4 == 0) and (self.year % 100 != 0)) or (self.year % 400 == 0):
+    @property
+    def day(self):
+        return self.__day
+
+    @property
+    def month(self):
+        return self.__month
+
+    @property
+    def year(self):
+        return self.__year
+
+    @staticmethod
+    def leap_year(year):
+        if ((year % 4 == 0) and (year % 100 != 0)) or (year % 400 == 0):
             return True
