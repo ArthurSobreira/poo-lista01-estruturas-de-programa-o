@@ -52,4 +52,8 @@ class Date:
         if date_1 > date_2:
             return 1
         return -1
-    
+
+    def month_by_name(self):
+        month_list = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october',
+                      'november', 'december']
+        return month_list[self.month - 1].title()  
