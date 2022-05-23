@@ -43,3 +43,13 @@ class Date:
     def leap_year(year):
         if ((year % 4 == 0) and (year % 100 != 0)) or (year % 400 == 0):
             return True
+
+    def compare(self, year, month, day):
+        date_1 = datetime.date(self.year, self.month, self.day)
+        date_2 = datetime.date(year, month, day)
+        if date_1 == date_2:
+            return 0
+        if date_1 > date_2:
+            return 1
+        return -1
+    
