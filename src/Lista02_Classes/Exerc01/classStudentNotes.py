@@ -1,4 +1,4 @@
-from Student import Student
+from classStudent import Student
 
 
 class StudentsNotes(Student):
