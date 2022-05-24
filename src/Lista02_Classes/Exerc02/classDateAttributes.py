@@ -18,5 +18,5 @@ class DateAttributes(Date):
         return month_list[self.month - 1].title()
 
     def clone(self):
-        data_clone = Date(self.day, self.month, self.year)
-        return data_clone
+        date_clone = Date(self.day, self.month, self.year)
+        return date_clone
