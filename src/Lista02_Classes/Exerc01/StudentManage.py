@@ -40,6 +40,8 @@ def main():
             continue
         if choice == 4:
             break
+        else:
+            print('\033[31mInvalid Value, Try Again!\033[m')
     print('=' * 50)
 
 
