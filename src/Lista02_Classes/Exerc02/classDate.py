@@ -43,10 +43,11 @@ class Date:
     def leap_year(year):
         if ((year % 4 == 0) and (year % 100 != 0)) or (year % 400 == 0):
             return True
+        return False
 
-    def compare(self, year, month, day):
+    def compare(self, date):
         date_1 = datetime.date(self.year, self.month, self.day)
-        date_2 = datetime.date(year, month, day)
+        date_2 = datetime.date(date.year, date.month, date.day)
         if date_1 == date_2:
             return 0
         if date_1 > date_2:
@@ -55,5 +56,9 @@ class Date:
 
     def month_by_name(self):
         month_list = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
-                      'august', 'september', 'october','november', 'december']
+                      'august', 'september', 'october', 'november', 'december']
         return month_list[self.month - 1].title()
+
+    def clone(self):
+        data_clone = Date(self.day, self.month, self.year)
+        return data_clone
