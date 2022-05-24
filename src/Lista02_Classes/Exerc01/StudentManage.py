@@ -9,7 +9,7 @@ def apart(msg, size):
 
 
 def register():
-    apart('Wellcome to the Student Manage', 50)
+    apart('Welcome to the Student Manage', 50)
     reg = input_number("Enter the student's matriculation number: ", int)
     name = input_number("Enter the student's name: ", str).strip().title()
     test_sco_1 = input_number('Enter the Test Score 1: ', float)
