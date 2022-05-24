@@ -39,10 +39,10 @@ def main():
             student = register()
             continue
         if choice == 4:
+            apart('End of the Program, always come back!', 50)
             break
         else:
             print('\033[31mInvalid Value, Try Again!\033[m')
-    print('=' * 50)
 
 
 if __name__ == '__main__':
