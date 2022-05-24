@@ -45,6 +45,8 @@ class Date:
             return True
         return False
 
+
+class DateAttributes(Date):
     def compare(self, date):
         date_1 = datetime.date(self.year, self.month, self.day)
         date_2 = datetime.date(date.year, date.month, date.day)
