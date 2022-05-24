@@ -27,6 +27,7 @@ def main():
             "4 - To clone the date.\n"
             "5 - To go out\n"
             "> ")
+
         if choice == 1:
             apart('Enter the Date to Compare it', 50)
             new_date = date_input()
@@ -38,10 +39,12 @@ def main():
             else:
                 print('\033[32mThe Second date is bigger.\033[m')
             continue
+
         if choice == 2:
             mon_name = main_date.month_by_name()
             print(f"> The name of the month is {mon_name}.")
             continue
+
         if choice == 3:
             current_year = main_date.year
             if main_date.leap_year(current_year):
@@ -49,13 +52,16 @@ def main():
             else:
                 print(f'> {current_year} is not a leap year.')
             continue
+
         if choice == 4:
             date_clone = main_date.clone()
             print(f'Object {date_clone} has just been cloned. ')
             continue
+
         if choice == 5:
             apart('End of the Program, always come back!', 50)
             break
+
         else:
             print('\033[31mInvalid Value, Try Again!\033[m')
 
