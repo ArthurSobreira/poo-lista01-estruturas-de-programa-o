@@ -12,7 +12,12 @@ def date_input():
     day = input_number('> Enter the Day: ')
     mon = input_number('> Enter the Month (Number): ')
     year = input_number('> Enter the Year: ')
-    return DateAttributes(day, mon, year)
+    my_date = DateAttributes(day, mon, year)
+    if my_date.__str__() == '01/01/0001':
+        print(f'Invalid Date, it will be set to {my_date}.')
+    else:
+        print(f'Date defined as {my_date}.')
+    return my_date
 
 
 def main():
