@@ -23,13 +23,14 @@ class Date:
                         valid_date = True
 
         if valid_date:
-            my_date = date(year, month, day)
-            form_date = datetime.strftime(my_date, "%d/%m/%Y")
-            print(f'Date defined as {form_date}.')
             self.__day, self.__month, self.__year = day, month, year
         else:
-            print('Invalid Date, it will be set to 01/01/0001.')
             self.__day, self.__month, self.__year = 1, 1, 1
+
+    def __str__(self):
+        my_date = date(self.year, self.month, self.day)
+        form_date = datetime.strftime(my_date, "%d/%m/%Y")
+        return form_date
 
     @property
     def day(self):
