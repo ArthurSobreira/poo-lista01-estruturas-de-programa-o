@@ -23,14 +23,14 @@ def main():
     while True:
         print('=' * 50)
         choice = input_number(
-                "1 - To view the student's average.\n"
-                "2 - To view if the student is in recovery.\n"
-                "3 - To register a new student.\n"
-                "4 - To go out.\n"
+                "1 - Student average;\n"
+                "2 - Status of approbation;\n"
+                "3 - Register a new student;\n"
+                "4 - Exit.\n"
                 "> ")
         if choice == 1:
             note = student.average()
-            print(f"> {student.name}'s average: {note:.2f}")
+            print(f"> {student.name} average: {note:.2f}")
             continue
         if choice == 2:
             student.final(student.average())
