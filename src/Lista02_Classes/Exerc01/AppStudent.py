@@ -1,4 +1,4 @@
-from classStudentNotes import StudentsNotes
+from classStudentGrades import StudentsNotes
 from src.Lista01_EstruturasDeProgramação.Exerc03_BinaryConverter import *
 
 
