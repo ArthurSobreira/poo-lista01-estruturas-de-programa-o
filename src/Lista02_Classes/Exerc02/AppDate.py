@@ -1,4 +1,4 @@
-from src.Lista01_EstruturasDeProgramação.Exerc03_BinaryConverter import *
+from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import *
 from classDateAttributes import DateAttributes
 
 

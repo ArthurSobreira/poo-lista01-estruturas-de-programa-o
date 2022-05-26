@@ -1,5 +1,5 @@
 from classStudentGrades import StudentsGrades
-from src.Lista01_EstruturasDeProgramação.Exerc03_BinaryConverter import *
+from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import *
 
 
 def apart(msg, size):
