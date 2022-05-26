@@ -31,7 +31,7 @@ class Student:
 
     @exam_2_grade.setter
     def exam_2_grade(self, new_grade):
-        self.__exam_1_grade = new_grade
+        self.__exam_2_grade = new_grade
 
     # Getter and Setter __work_grade
     @property
