@@ -26,11 +26,11 @@ def main():
     while True:
         print('=' * 50)
         choice = input_number(
-            "1 - To compare two dates.\n"
-            "2 - To see the month name.\n"
-            "3 - To check if the year is a leap year.\n"
-            "4 - To clone the date.\n"
-            "5 - To go out\n"
+            "1 - Compare dates;\n"
+            "2 - Which the month;\n"
+            "3 - Check if the year is a leap;\n"
+            "4 - Clone the input date;\n"
+            "5 - Exit.\n"
             "> ")
 
         if choice == 1:
@@ -40,9 +40,9 @@ def main():
             if comp == 0:
                 print('\033[32mSame dates.\033[m')
             if comp == 1:
-                print('\033[32mThe First date is bigger.\033[m')
+                print('\033[32mThe First date is greater.\033[m')
             else:
-                print('\033[32mThe Second date is bigger.\033[m')
+                print('\033[32mThe Second date is greater.\033[m')
             continue
 
         if choice == 2:
