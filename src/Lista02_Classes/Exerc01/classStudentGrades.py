@@ -1,7 +1,7 @@
 from classStudent import Student
 
 
-class StudentsNotes(Student):
+class StudentsGrades(Student):
     def average(self):
         test_sum = ((self.test_1_note + self.test_2_note) * 8) / 20
         work_sum = (self.work_note * 2) / 10

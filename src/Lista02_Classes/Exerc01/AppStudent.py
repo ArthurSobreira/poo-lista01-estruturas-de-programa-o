@@ -1,4 +1,4 @@
-from classStudentGrades import StudentsNotes
+from classStudentGrades import StudentsGrades
 from src.Lista01_EstruturasDeProgramação.Exerc03_BinaryConverter import *
 
 
@@ -15,7 +15,7 @@ def register():
     test_sco_1 = input_number('Enter the Test Score 1: ', float)
     test_sco_2 = input_number('Enter the test Score 2: ', float)
     work_sco = input_number('Enter the work score: ', float)
-    return StudentsNotes(reg, name, test_sco_1, test_sco_2, work_sco)
+    return StudentsGrades(reg, name, test_sco_1, test_sco_2, work_sco)
 
 
 def main():
