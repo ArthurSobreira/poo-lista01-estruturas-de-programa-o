@@ -3,8 +3,8 @@ from classStudent import Student
 
 class StudentsGrades(Student):
     def average(self):
-        test_sum = ((self.test_1_note + self.test_2_note) * 8) / 20
-        work_sum = (self.work_note * 2) / 10
+        test_sum = ((self.exam_1_grade + self.exam_2_grade) * 8) / 20
+        work_sum = (self.work_grade * 2) / 10
         final_grade = test_sum + work_sum
         return final_grade
 

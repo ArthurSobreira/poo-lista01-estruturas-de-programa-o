@@ -12,10 +12,10 @@ def register():
     apart('Welcome to the Student Manage', 50)
     reg = input_number("Enter the student's matriculation number: ", int)
     name = input_number("Enter the student's name: ", str).strip().title()
-    test_sco_1 = input_number('Enter the Test Score 1: ', float)
-    test_sco_2 = input_number('Enter the test Score 2: ', float)
-    work_sco = input_number('Enter the work score: ', float)
-    return StudentsGrades(reg, name, test_sco_1, test_sco_2, work_sco)
+    grade_1 = input_number('Enter the exam grade 1: ', float)
+    grade_2 = input_number('Enter the exam grade 2: ', float)
+    work_grade = input_number('Enter the work grade: ', float)
+    return StudentsGrades(reg, name, grade_1, grade_2, work_grade)
 
 
 def main():

@@ -1,9 +1,9 @@
 class Student:
-    def __init__(self, register, name, test_1_note, test_2_note, work_note):
+    def __init__(self, register, name, exam_1_grade, exam_2_grade, work_grade):
         self.__register = register
-        self.__test_1_note = test_1_note
-        self.__test_2_note = test_2_note
-        self.__work_note = work_note
+        self.__exam_1_grade = exam_1_grade
+        self.__exam_2_grade = exam_2_grade
+        self.__work_grade = work_grade
         self.__name = name
 
     # Getter and Setter __name
@@ -15,29 +15,29 @@ class Student:
     def name(self, new_name):
         self.__name = new_name
 
-    # Getter and Setter __test_1_note
+    # Getter and Setter __exam_1_grade
     @property
-    def test_1_note(self):
-        return self.__test_1_note
+    def exam_1_grade(self):
+        return self.__exam_1_grade
 
-    @test_1_note.setter
-    def test_1_note(self, new_note):
-        self.__test_1_note = new_note
+    @exam_1_grade.setter
+    def exam_1_grade(self, new_grade):
+        self.__exam_1_grade = new_grade
 
-    # Getter and Setter __test_2_note
+    # Getter and Setter __exam_2_grade
     @property
-    def test_2_note(self):
-        return self.__test_2_note
+    def exam_2_grade(self):
+        return self.__exam_2_grade
 
-    @test_2_note.setter
-    def test_2_note(self, new_note):
-        self.__test_2_note = new_note
+    @exam_2_grade.setter
+    def exam_2_grade(self, new_grade):
+        self.__exam_1_grade = new_grade
 
-    # Getter and Setter __work_note
+    # Getter and Setter __work_grade
     @property
-    def work_note(self):
-        return self.__work_note
+    def work_grade(self):
+        return self.__work_grade
 
-    @work_note.setter
-    def work_note(self, new_note):
-        self.__work_note = new_note
+    @work_grade.setter
+    def work_grade(self, new_grade):
+        self.__work_grade = new_grade
