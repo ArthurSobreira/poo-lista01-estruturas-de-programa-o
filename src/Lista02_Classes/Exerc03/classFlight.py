@@ -2,9 +2,9 @@ from src.Lista02_Classes.Exerc02.classDate import Date
 
 
 class Flight:
-    def __init__(self, number, data):
+    def __init__(self, number, date):
         self.__number = number
-        self.__data = Date(data['day'], data['month'], data['year'])
+        self.__date = Date(date['day'], date['month'], date['year'])
 
     # Getter and Setter __number
     @property
@@ -15,7 +15,7 @@ class Flight:
     def number(self, new_number):
         self.__number = new_number
 
-    # Getter __data
+    # Getter __date
     @property
-    def data(self):
-        return self.__data
+    def date(self):
+        return self.__date
