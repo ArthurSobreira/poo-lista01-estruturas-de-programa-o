@@ -5,7 +5,7 @@ class Flight:
     def __init__(self, number, data, seat):
         self.__number = number
         self.__data = Date(data['day'], data['month'], data['year'])
-        self.__seat = seat
+        self.__seat = seat.upper()
 
     # Getter and Setter __number
     @property
