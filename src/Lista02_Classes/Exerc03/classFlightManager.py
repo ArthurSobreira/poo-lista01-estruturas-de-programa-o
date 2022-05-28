@@ -8,6 +8,7 @@ class FlightManager(Flight):
         super().__init__(number, data)
         self.__seats_list = seat_list
 
+    # Getter and Setter __seats_list
     @property
     def seats_list(self):
         return self.__seats_list
@@ -16,6 +17,7 @@ class FlightManager(Flight):
     def seats_list(self, new_list):
         self.__seats_list = new_list
 
+    # Main Methods
     def vacant_seat(self):  # proximoLivre
         pass
 
@@ -31,8 +33,13 @@ class FlightManager(Flight):
         self.seats_list[column][row] = 'X'
         return self.seats_list
 
-    def vacancy(self):  # vagas
-        pass
+    def number_vacancies(self):  # vagas
+        amount = 0
+        for c in self.seats_list:
+            for i in c:
+                if i == '.':
+                    amount += 1
+        return amount
 
     def seat_map(self):
         return pd.DataFrame(self.seats_list)
@@ -53,5 +60,6 @@ if __name__ == '__main__':
     my_obj.occupy_seat('f13')
     my_obj.occupy_seat('e10')
     my_obj.occupy_seat('a15')
+    print(my_obj.number_vacancies())
     print(my_obj.seats_list)
     print(my_obj.seat_map())
