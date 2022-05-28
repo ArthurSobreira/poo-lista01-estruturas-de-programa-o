@@ -19,8 +19,12 @@ class FlightManager(Flight):
     def vacant_seat(self):  # proximoLivre
         pass
 
-    def check_occupancy(self):  # verifica
-        pass
+    def check_occupancy(self, seat):  # verifica
+        occupation = False
+        column, row = str(seat[0].upper()), int(seat[1:])
+        if self.seats_list[column][row] == 'X':
+            occupation = True
+        return occupation
 
     def occupy_seat(self, seat):  # ocupa
         column, row = str(seat[0].upper()), int(seat[1:])
