@@ -1,4 +1,4 @@
-from classDate import Date
+from src.Lista02_Classes.Exerc02.classDate import Date
 import datetime
 
 
