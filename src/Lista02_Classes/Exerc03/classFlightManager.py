@@ -1,8 +1,5 @@
 import pandas as pd
 from string import ascii_uppercase
-
-import self
-
 from classFlight import Flight
 
 
@@ -33,8 +30,10 @@ class FlightManager(Flight):
 
     def occupy_seat(self, seat):  # ocupa
         column, row = str(seat[0].upper()), int(seat[1:])
-        self.seats_list[column][row] = 'X'
-        return self.seats_list
+        if not self.check_occupancy(seat):
+            self.seats_list[column][row] = 'X'
+            return True
+        return False
 
     def number_vacancies(self):  # vagas
         amount = 0
@@ -58,10 +57,3 @@ if __name__ == '__main__':
 
     my_list = seats_list()
     my_obj = FlightManager(23123, {'day': 2, 'month': 4, 'year': 2076}, my_list)
-    # my_obj.occupy_seat('c2')
-    # my_obj.occupy_seat('d7')
-    # my_obj.occupy_seat('f13')
-    # my_obj.occupy_seat('e10')
-    print(my_obj.number_vacancies())
-    print(my_obj.seats_list)
-    print(my_obj.seat_map())
