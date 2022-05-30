@@ -1,5 +1,6 @@
 import pandas as pd
 from classFlight import Flight
+from src.Lista02_Classes.Exerc02.AppDate import apart
 
 
 class FlightManager(Flight):
@@ -43,5 +44,6 @@ class FlightManager(Flight):
         return amount
 
     def seat_map(self):
+        apart('Seat Map', 50)
         return pd.DataFrame(self.seats_list)
 
