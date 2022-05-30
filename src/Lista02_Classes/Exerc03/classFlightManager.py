@@ -1,5 +1,8 @@
 import pandas as pd
 from string import ascii_uppercase
+
+import self
+
 from classFlight import Flight
 
 
@@ -35,10 +38,10 @@ class FlightManager(Flight):
 
     def number_vacancies(self):  # vagas
         amount = 0
+        df = pd.DataFrame(self.seats_list)
         for c in self.seats_list:
-            for i in c:
-                if i == '.':
-                    amount += 1
+            freq = df.groupby([c]).size()
+            amount += freq.values[0]
         return amount
 
     def seat_map(self):
@@ -55,11 +58,10 @@ if __name__ == '__main__':
 
     my_list = seats_list()
     my_obj = FlightManager(23123, {'day': 2, 'month': 4, 'year': 2076}, my_list)
-    my_obj.occupy_seat('c2')
-    my_obj.occupy_seat('d7')
-    my_obj.occupy_seat('f13')
-    my_obj.occupy_seat('e10')
-    my_obj.occupy_seat('a15')
+    # my_obj.occupy_seat('c2')
+    # my_obj.occupy_seat('d7')
+    # my_obj.occupy_seat('f13')
+    # my_obj.occupy_seat('e10')
     print(my_obj.number_vacancies())
     print(my_obj.seats_list)
     print(my_obj.seat_map())
