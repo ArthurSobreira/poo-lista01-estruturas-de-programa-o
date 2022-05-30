@@ -18,8 +18,18 @@ class FlightManager(Flight):
         self.__seats_list = new_list
 
     # Main Methods
-    def next_vacant_seat(self):
-        pass
+    def next_vacant_seat(self, seat):
+        column, row = str(seat[0]), int(seat[1:])
+        closest_value = []
+        for num, c in enumerate(self.seats_list[column]):
+            if not self.check_occupancy(seat):
+                if num < row:
+                    diff = row - num
+                    closest_value.append(diff)
+                if num > row:
+                    diff = num - row
+                    closest_value.append(diff)
+        print(sorted(closest_value, key=int))
 
     def check_occupancy(self, seat):
         occupation = False
