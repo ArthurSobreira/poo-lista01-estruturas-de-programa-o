@@ -52,7 +52,7 @@ def main():
             "2 - Take a seat;\n"
             "3 - Number of vacant seats;\n"
             "4 - Check if a seat is occupied;\n"
-            "5 - Next vacant seat;"
+            "5 - Next vacant seat;\n"
             "6 - Exit.\n"
             "> ")
         if choice == 1:
@@ -60,8 +60,10 @@ def main():
 
         if choice == 2:
             st = seat_input('> Enter seat number (Ex: A2): ')
-            main_flight.occupy_seat(st)
-            print(f'\033[32mSeat {st} has been occupied.\033[m')
+            if main_flight.occupy_seat(st):
+                print(f'\033[32mSeat {st} has been occupied.\033[m')
+            else:
+                print(f'\033[32mIt is not possible to occupy the seat {st}.\033[m')
 
         if choice == 3:
             vac = main_flight.number_vacancies()
@@ -75,14 +77,15 @@ def main():
                 print(f'\033[32mSeat {st} is empty.\033[m')
 
         if choice == 5:
-            pass
+            st = seat_input('> Enter seat number (Ex: A2): ')
+            main_flight.next_vacant_seat(st)
 
         if choice == 6:
             apart('End of the Program, always come back!', 50)
             break
 
-        else:
-            print('\033[31mInvalid Value, Try Again!\033[m')
+        if (choice < 1) or (choice > 6):
+            print('\033[31mInvalid Value, Try Again troxa!\033[m')
 
 
 if __name__ == '__main__':
