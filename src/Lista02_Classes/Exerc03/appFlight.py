@@ -52,7 +52,8 @@ def main():
             "2 - Take a seat;\n"
             "3 - Number of vacant seats;\n"
             "4 - Check if a seat is occupied;\n"
-            "5 - Exit.\n"
+            "5 - Next vacant seat;"
+            "6 - Exit.\n"
             "> ")
         if choice == 1:
             print(main_flight.seat_map())
@@ -74,8 +75,14 @@ def main():
                 print(f'\033[32mSeat {st} is empty.\033[m')
 
         if choice == 5:
+            pass
+
+        if choice == 6:
             apart('End of the Program, always come back!', 50)
             break
+
+        else:
+            print('\033[31mInvalid Value, Try Again!\033[m')
 
 
 if __name__ == '__main__':
