@@ -8,7 +8,7 @@ class Flight:
 
     def __str__(self):
         return f'The flight number was set to: {self.number}\n' \
-               f'The flight date was set as: {self.date}'
+               f'The flight date was set to: {self.date}'
 
     # Getter and Setter __number
     @property
