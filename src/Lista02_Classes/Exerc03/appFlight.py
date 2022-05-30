@@ -1,4 +1,7 @@
+from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import input_number
+from src.Lista02_Classes.Exerc02.AppDate import apart
 from string import ascii_uppercase
+from classFlightManager import FlightManager
 
 
 def seats_list(lett_list=False):
@@ -26,3 +29,23 @@ def seat_input(msg):
             print('\033[31mInvalid seat value, Try Again\033[m')
             continue
 
+
+def flight_data_entry():
+    num = input_number('Enter the flight number: ')
+    day = input_number('Enter the flight date:\n'
+                       '> Day ')
+    month = input_number('> Month (number) ')
+    year = input_number('> Year ')
+    main_date = {'day': day, 'month': month, 'year': year}
+    flight_data = FlightManager(num, main_date, seats_list())
+    return flight_data
+
+
+def main():
+    apart('Welcome to the Flight Manager', 50)
+    my_flight = flight_data_entry()
+    print(my_flight)
+
+
+if __name__ == '__main__':
+    main()
