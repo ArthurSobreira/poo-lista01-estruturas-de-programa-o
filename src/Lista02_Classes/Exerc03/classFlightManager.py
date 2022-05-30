@@ -18,7 +18,7 @@ class FlightManager(Flight):
         self.__seats_list = new_list
 
     # Main Methods
-    def vacant_seat(self):  # proximoLivre
+    def next_vacant_seat(self):
         pass
 
     def check_occupancy(self, seat):
@@ -46,4 +46,3 @@ class FlightManager(Flight):
     def seat_map(self):
         apart('Seat Map', 50)
         return pd.DataFrame(self.seats_list)
-
