@@ -43,28 +43,36 @@ def flight_data_entry():
 
 def main():
     apart('Welcome to the Flight Manager', 50)
-    my_flight = flight_data_entry()
-    print(my_flight)
+    main_flight = flight_data_entry()
+    print(main_flight)
     while True:
         print('=' * 50)
         choice = input_number(
             "1 - View seats map;\n"
             "2 - Take a seat;\n"
             "3 - Number of vacant seats;\n"
-            "4 - ;\n"
+            "4 - Check if a seat is occupied;\n"
             "5 - Exit.\n"
             "> ")
         if choice == 1:
-            print(my_flight.seat_map())
+            print(main_flight.seat_map())
 
         if choice == 2:
             st = seat_input('> Enter seat number (Ex: A2): ')
-            my_flight.occupy_seat(st)
+            main_flight.occupy_seat(st)
             print(f'\033[32mSeat {st} has been occupied.\033[m')
 
         if choice == 3:
-            vac = my_flight.number_vacancies()
+            vac = main_flight.number_vacancies()
             print(f'\033[32mThere are {vac} seats available.\033[m')
+
+        if choice == 4:
+            st = seat_input('> Enter seat number (Ex: A2): ')
+            if main_flight.check_occupancy(st):
+                print(f'\033[32mSeat {st} is occupied.\033[m')
+            else:
+                print(f'\033[32mSeat {st} is empty.\033[m')
+
         if choice == 5:
             apart('End of the Program, always come back!', 50)
             break
