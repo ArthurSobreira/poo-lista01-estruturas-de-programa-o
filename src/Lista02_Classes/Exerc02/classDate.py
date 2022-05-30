@@ -5,7 +5,7 @@ class Date:
     def __init__(self, day, month, year):
         months = [[2], [4, 6, 9, 11], [1, 3, 5, 7, 8, 10, 12]]
         valid_date = False
-        if year > 0:
+        if (year > 0) and (year <= 9999):
             if month in range(1, 13):
                 # Months with 30 days
                 if (month in months[1]) and (1 <= day <= 30):
