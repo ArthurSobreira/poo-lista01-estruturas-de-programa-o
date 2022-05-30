@@ -7,8 +7,8 @@ class Flight:
         self.__date = Date(date['day'], date['month'], date['year'])
 
     def __str__(self):
-        return f'Fligth number was defined as: {self.number}\n' \
-               f'Flight date was define as: {self.date}'
+        return f'The flight number was set to: {self.number}\n' \
+               f'The flight date was set as: {self.date}'
 
     # Getter and Setter __number
     @property
