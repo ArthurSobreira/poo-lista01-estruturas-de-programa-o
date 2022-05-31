@@ -17,16 +17,15 @@ def seats_list(lett_list=False):
 
 def seat_input(msg):
     while True:
+        seat = str(input(msg)).strip().upper()
         try:
-            seat = str(input(msg)).strip().upper()
-        except (ValueError, TypeError):
-            print('\033[31mInvalid seat value, Try Again\033[m')
-            continue
-        else:
             if (seat[0].isalpha()) and (seat[1:].isalnum()):
                 if (str(seat[0]) in seats_list(True)) and (int(seat[1:]) in range(0, 16)):
                     return seat
-            print('\033[31mInvalid seat value, Try Again\033[m')
+            print('\033[31mInvalid seat value, Try Again!\033[m')
+            continue
+        except (ValueError, TypeError):
+            print('\033[31mInvalid seat value, Try Again!\033[m')
             continue
 
 
@@ -94,7 +93,7 @@ def main():
             break
 
         if (choice < 1) or (choice > 6):
-            print('\033[31mInvalid Value, Try Again troxa!\033[m')
+            print('\033[31mInvalid Value, Try Again!\033[m')
 
 
 if __name__ == '__main__':
