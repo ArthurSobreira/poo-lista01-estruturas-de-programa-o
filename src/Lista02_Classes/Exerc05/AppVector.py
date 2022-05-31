@@ -60,7 +60,8 @@ def main():
                 print(f'\033[32mIndex out of vector range, try again!\033[m')
 
         if choice == 3:
-            pass
+            lght = main_vector.vector_size()
+            print(f'> \033[32m The vector has {lght} elements.\033[m')
 
         if choice == 4:
             print(f'> \033[32m{main_vector}\033[m')
@@ -69,11 +70,9 @@ def main():
             apart('End of the Program, always come back!', 50)
             break
 
-        if (choice < 1) or (choice > 6):
+        if (choice < 1) or (choice > 5):
             print('\033[31mInvalid Value, Try Again!\033[m')
 
 
 if __name__ == '__main__':
     main()
-
-# [1, 2, a, b]
