@@ -6,9 +6,10 @@ class VectorManage(Vector):
         self.initial_vector.append(element)
 
     def get_element(self, index):
-        if index not in range(self.list_size()):
+        try:
+            return self.initial_vector[index]
+        except IndexError:
             return False
-        return self.initial_vector[index]
 
-    def list_size(self):
+    def vector_size(self):
         return len(self.initial_vector)
