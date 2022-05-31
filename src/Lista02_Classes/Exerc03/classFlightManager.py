@@ -4,8 +4,8 @@ from src.Lista02_Classes.Exerc02.AppDate import apart
 
 
 class FlightManager(Flight):
-    def __init__(self, number, data, seat_list):
-        super().__init__(number, data)
+    def __init__(self, number, date, seat_list):
+        super().__init__(number, date)
         self.__seats_list = seat_list
 
     # Getter and Setter __seats_list
