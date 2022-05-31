@@ -22,14 +22,23 @@ class FlightManager(Flight):
         column, row = str(seat[0]), int(seat[1:])
         closest_value = []
         for num, c in enumerate(self.seats_list[column]):
-            if not self.check_occupancy(seat):
+            if c == '.':
                 if num < row:
                     diff = row - num
                     closest_value.append(diff)
                 if num > row:
                     diff = num - row
                     closest_value.append(diff)
-        print(sorted(closest_value, key=int))
+
+        if len(closest_value) == 0:  # There are no vacant seats
+            return False
+
+        closest_value = sorted(closest_value, key=int)
+        lower = closest_value[0]
+        closest_seat = row + lower
+        if (closest_seat > 15) or (self.check_occupancy(f'{column}{closest_seat}')):
+            closest_seat = row - lower
+        return f'{column}{closest_seat}'
 
     def check_occupancy(self, seat):
         occupation = False
