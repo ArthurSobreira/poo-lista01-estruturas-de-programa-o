@@ -69,6 +69,7 @@ def main():
 
         else:
             print('\033[31mInvalid Value, Try Again!\033[m')
+            print('=' * 50)
 
 
 if __name__ == '__main__':
