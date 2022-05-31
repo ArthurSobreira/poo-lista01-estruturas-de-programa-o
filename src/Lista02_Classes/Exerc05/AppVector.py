@@ -37,28 +37,43 @@ def main():
     while True:
         print('=' * 50)
         choice = input_number(
-            "1 - ;\n"
-            "2 - ;\n"
-            "3 - ;\n"
-            "4 - Exit.\n"
+            "1 - To insert an element;\n"
+            "2 - Access an element by index;\n"
+            "3 - See the length of the vector;\n"
+            "4 - Print the vector;\n"
+            "5 - Exit.\n"
             "> ")
 
         if choice == 1:
-            pass
+            new_element = input_number('> Enter the new element: ', str)
+            if new_element.isnumeric():
+                new_element = int(new_element)
+            main_vector.insert(new_element)
 
         if choice == 2:
-            pass
+            while True:
+                index = input_number('Enter the element index: ')
+                element = main_vector.get_element(index)
+                if element:
+                    print(f'\033[32mThe element at index {index} is {element}.\033[m')
+                    break
+                print(f'\033[32mIndex out of vector range, try again!\033[m')
 
         if choice == 3:
             pass
 
         if choice == 4:
+            print(f'> \033[32m{main_vector}\033[m')
+
+        if choice == 5:
             apart('End of the Program, always come back!', 50)
             break
 
-        else:
+        if (choice < 1) or (choice > 6):
             print('\033[31mInvalid Value, Try Again!\033[m')
 
 
 if __name__ == '__main__':
     main()
+
+# [1, 2, a, b]
