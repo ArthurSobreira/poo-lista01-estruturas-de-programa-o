@@ -1,15 +1,15 @@
 class Vector:
-    def __init__(self, initial_list):
-        self.__initial_list = initial_list
+    def __init__(self, initial_vector):
+        self.__initial_vector = initial_vector
 
     def __str__(self):
-        return str(self.initial_list)
+        return str(self.initial_vector)
 
-    # Getter and Setter __initial_list
+    # Getter and Setter __initial_vector
     @property
-    def initial_list(self):
-        return self.__initial_list
+    def initial_vector(self):
+        return self.__initial_vector
 
-    @initial_list.setter
-    def initial_list(self, new_list):
-        self.__initial_list = new_list
+    @initial_vector.setter
+    def initial_vector(self, new_vector):
+        self.__initial_vector = new_vector
