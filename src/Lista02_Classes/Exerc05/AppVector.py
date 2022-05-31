@@ -28,3 +28,37 @@ def vector_input(msg):
         except (ValueError, TypeError, IndexError):
             print('\033[31mInvalid input, Try Again!\033[m')
             continue
+
+
+def main():
+    apart('Welcome to Vector Manager', 50)
+    vctr = vector_input('Enter the vector (Ex: [x, y]): ')
+    main_vector = VectorManage(vctr)
+    while True:
+        print('=' * 50)
+        choice = input_number(
+            "1 - ;\n"
+            "2 - ;\n"
+            "3 - ;\n"
+            "4 - Exit.\n"
+            "> ")
+
+        if choice == 1:
+            pass
+
+        if choice == 2:
+            pass
+
+        if choice == 3:
+            pass
+
+        if choice == 4:
+            apart('End of the Program, always come back!', 50)
+            break
+
+        else:
+            print('\033[31mInvalid Value, Try Again!\033[m')
+
+
+if __name__ == '__main__':
+    main()
