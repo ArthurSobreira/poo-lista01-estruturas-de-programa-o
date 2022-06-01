@@ -3,31 +3,47 @@ from src.Lista02_Classes.Exerc02.AppDate import apart
 from classVectorManager import VectorManage
 
 
-def vector_input(msg):
+def vector_input(msg):  # Não aceita uma lista com menos de 2 elementos.
     while True:
-        vector = str(input(msg)).strip()
+        vector = str(input(msg))
         try:
-            if (vector[0] == '[') and (vector[-1] == ']'):
-                if '.' not in vector:
-                    ind = vector.index(',')
-                    if vector[ind + 1] == ' ':
-                        vctr = list(vector[1:-1].split(', '))
-                        for c in range(len(vctr)):
-                            if vctr[c].isnumeric():
-                                vctr[c] = int(vctr[c])
-                        return vctr
+            if ((vector[0] == '[') and (vector[-1] == ']')) and ('.' not in vector):
+                vector = list(vector[1:-1])
+                if isinstance(vector, list):
+                    new_vct = []
+                    if len(vector) == 0:
+                        return vector
                     else:
-                        print('\033[31mPlease, separate the elements with a space after the comma!\033[m')
-                        continue
-                else:
-                    print('\033[31mPlease, do not enter decimal numbers!\033[m')
-                    continue
+                        print(f'Ah é {vector} length: {len(vector)}')
+                        if (',' not in vector) or (vector[-1] or vector[0] == ','):
+                            new_vct.append(''.join(vector))
+                            print(new_vct)
+                        else:
+                            pass
             else:
-                print('\033[31mInvalid input, Try Again!\033[m')
+                print('\033[31mInvalid input, please enter letters or whole numbers only!\033[m')
                 continue
+
         except (ValueError, TypeError, IndexError):
-            print('\033[31mInvalid input, Try Again!\033[m')
+            print('\033[31mAn error has occurred, please try again!\033[m')
             continue
+
+            # if (vector[0] == '[') and (vector[-1] == ']'):
+            #     if vector.replace(' ', '') == '[]':
+            #         return list()
+            #     ind = vector.index(',')
+            #     if vector[ind + 1] == ' ':
+            #         vctr = list(vector[1:-1].split(', '))
+            #         for c in range(len(vctr)):
+            #             if vctr[c].isnumeric():
+            #                 vctr[c] = int(vctr[c])
+            #         return vctr
+            #     else:
+            #         print('\033[31mPlease, separate the elements with a space after the comma!\033[m')
+            #         continue
+            # else:
+            #     print('\033[31mInvalid input, Try Again!\033[m')
+            #     continue
 
 
 def main():
@@ -51,13 +67,16 @@ def main():
             main_vector.insert(new_element)
 
         if choice == 2:
-            while True:
-                index = input_number('Enter the element index: ')
-                element = main_vector.get_element(index)
-                if element:
-                    print(f'\033[32mThe element at index {index} is {element}.\033[m')
-                    break
-                print(f'\033[32mIndex out of vector range, try again!\033[m')
+            if main_vector.vector_size() == 0:
+                print(f'\033[32mThe list is empty, please insert an element!\033[m')
+            else:
+                while True:
+                    index = input_number('Enter the element index: ')
+                    element = main_vector.get_element(index)
+                    if element:
+                        print(f'\033[32mThe element at index {index} is {element}.\033[m')
+                        break
+                    print(f'\033[31mIndex out of vector range, try again!\033[m')
 
         if choice == 3:
             lght = main_vector.vector_size()
