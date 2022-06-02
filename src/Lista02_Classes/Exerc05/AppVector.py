@@ -3,47 +3,54 @@ from src.Lista02_Classes.Exerc02.AppDate import apart
 from classVectorManager import VectorManage
 
 
-def vector_input(msg):  # Não aceita uma lista com menos de 2 elementos.
-    while True:
-        vector = str(input(msg))
-        try:
-            if ((vector[0] == '[') and (vector[-1] == ']')) and ('.' not in vector):
-                vector = list(vector[1:-1])
-                if isinstance(vector, list):
-                    new_vct = []
-                    if len(vector) == 0:
-                        return vector
-                    else:
-                        print(f'Ah é {vector} length: {len(vector)}')
-                        if (',' not in vector) or (vector[-1] or vector[0] == ','):
-                            new_vct.append(''.join(vector))
-                            print(new_vct)
-                        else:
-                            pass
-            else:
-                print('\033[31mInvalid input, please enter letters or whole numbers only!\033[m')
-                continue
+def remove(string):
+    comma, spc = ',', ' '
+    string = string.replace(spc, '')
 
+    if string[0] == comma:
+        string = string[1:]
+
+    if string[-1] == comma:
+        string = string[:-1]
+
+    return string
+
+
+def vector_input(msg):
+    while True:
+        vector = str(input(msg)).strip()
+        try:
+            if (vector[0] == '[') and (vector[-1] == ']'):
+                vector = list(vector[1:-1])
+                new_vct = [''.join(vector)]
+
+                # Empty list
+                if len(vector) == 0:
+                    return vector
+
+                else:
+                    # Remove unnecessary spaces and commas
+                    new_vct[0] = remove(new_vct[0])
+
+                    # List with one element
+                    if ',' not in new_vct[0]:
+                        if new_vct[0].isnumeric():
+                            new_vct[0] = int(new_vct[0])
+                        return new_vct
+
+                    # List with two or more elements
+                    else:
+                        new_vct = new_vct[0].split(',')
+                        for c in range(len(new_vct)):
+                            if new_vct[c].isnumeric():
+                                new_vct[c] = int(new_vct[c])
+                        return new_vct
+            else:
+                print('\033[31mInvalid input, enter a list with only letters or integers!\033[m')
+                continue
         except (ValueError, TypeError, IndexError):
             print('\033[31mAn error has occurred, please try again!\033[m')
             continue
-
-            # if (vector[0] == '[') and (vector[-1] == ']'):
-            #     if vector.replace(' ', '') == '[]':
-            #         return list()
-            #     ind = vector.index(',')
-            #     if vector[ind + 1] == ' ':
-            #         vctr = list(vector[1:-1].split(', '))
-            #         for c in range(len(vctr)):
-            #             if vctr[c].isnumeric():
-            #                 vctr[c] = int(vctr[c])
-            #         return vctr
-            #     else:
-            #         print('\033[31mPlease, separate the elements with a space after the comma!\033[m')
-            #         continue
-            # else:
-            #     print('\033[31mInvalid input, Try Again!\033[m')
-            #     continue
 
 
 def main():
