@@ -1,6 +1,6 @@
 from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import input_number
 from src.Lista02_Classes.Exerc02.AppDate import apart
-from classVectorManager import VectorManage
+from src.Lista02_Classes.Exerc05.classVectorManager import VectorManage
 
 
 def remove(string):
