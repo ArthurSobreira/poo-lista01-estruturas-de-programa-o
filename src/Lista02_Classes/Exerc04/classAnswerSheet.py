@@ -1,9 +1,12 @@
+from string import ascii_lowercase
+
+
 class AnswerSheet:
     def __init__(self, answers_list):
         answers_dic = {}
         if len(answers_list) == 3:
             for question, answer in enumerate(answers_list):
-                if answer.lower() in 'abcde':
+                if answer.lower() in ascii_lowercase[:5]:
                     answers_dic[question + 1] = answer
 
         self.__answer_sheet = answers_dic
