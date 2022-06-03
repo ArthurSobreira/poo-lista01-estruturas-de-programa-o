@@ -1,4 +1,3 @@
-from src.Lista02_Classes.Exerc02.AppDate import apart
 from classFlight import Flight
 import pandas as pd
 
