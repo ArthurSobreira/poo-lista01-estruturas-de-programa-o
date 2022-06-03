@@ -1,4 +1,4 @@
-from classVector import Vector
+from src.Lista02_Classes.Exerc05.classVector import Vector
 
 
 class VectorManage(Vector):
