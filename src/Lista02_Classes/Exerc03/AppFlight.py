@@ -55,6 +55,7 @@ def main():
             "6 - Exit.\n"
             "> ")
         if choice == 1:
+            apart('Seat Map', 50)
             print(main_flight.seat_map())
 
         if choice == 2:
