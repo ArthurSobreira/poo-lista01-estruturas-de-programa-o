@@ -12,7 +12,7 @@ def main():
         print('=' * 50)
         choice = input_number(
             "1 - Print the vector;\n"
-            "2 - Sort the list Alphabetically;\n"
+            "2 - Sort the vector Alphabetically;\n"
             "3 - Insert a element;\n"
             "4 - Merge two vectors;\n"
             "5 - Exit.\n"
@@ -22,17 +22,24 @@ def main():
             print(f'> \033[32m{main_vector}\033[m')
 
         if choice == 2:
-            pass
+            print(f'> \033[32mOrdered Vector: {main_vector.order()}\033[m')
 
         if choice == 3:
-            pass
+            element = input_number('> Enter the new element: ', str)
+            main_vector.insert_string(element)
+            print(f'\033[32mThe element {element} has been inserted into the vector.\033[m')
 
         if choice == 4:
-            pass
+            merge_vector = OrderedVector(vector_input('> Enter the merge vector (Ex: [x, y]): ', False))
+            new_vector = main_vector.merge(merge_vector)
+            print(f'> \033[32mMerged Vector: {new_vector}\033[m')
 
         if choice == 5:
             apart('End of the Program, always come back!', 50)
             break
+
+        if (choice < 1) or (choice > 5):
+            print('\033[31mInvalid Value, Try Again!\033[m')
 
 
 if __name__ == '__main__':
