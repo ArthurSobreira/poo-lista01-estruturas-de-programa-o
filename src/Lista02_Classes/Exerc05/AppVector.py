@@ -16,7 +16,7 @@ def remove(string):
     return string
 
 
-def vector_input(msg):
+def vector_input(msg, num=True):
     while True:
         vector = str(input(msg)).strip()
         try:
@@ -24,26 +24,24 @@ def vector_input(msg):
                 vector = list(vector[1:-1])
                 new_vct = [''.join(vector)]
 
-                # Empty list
                 if len(vector) == 0:
                     return vector
 
                 else:
-                    # Remove unnecessary spaces and commas
                     new_vct[0] = remove(new_vct[0])
 
-                    # List with one element
                     if ',' not in new_vct[0]:
-                        if new_vct[0].isnumeric():
-                            new_vct[0] = int(new_vct[0])
+                        if num:
+                            if new_vct[0].isnumeric():
+                                new_vct[0] = int(new_vct[0])
                         return new_vct
 
-                    # List with two or more elements
                     else:
                         new_vct = new_vct[0].split(',')
-                        for c in range(len(new_vct)):
-                            if new_vct[c].isnumeric():
-                                new_vct[c] = int(new_vct[c])
+                        if num:
+                            for c in range(len(new_vct)):
+                                if new_vct[c].isnumeric():
+                                    new_vct[c] = int(new_vct[c])
                         return new_vct
             else:
                 print('\033[31mInvalid input, enter a list with only letters or integers!\033[m')
