@@ -3,11 +3,12 @@ from src.Lista02_Classes.Exerc05.classVector import Vector
 
 class OrderedVector(Vector):
     def order(self):
+        self.initial_vector = sorted(self.initial_vector)
         return sorted(self.initial_vector)
 
     def insert_string(self, string):
         self.initial_vector.append(string)
-        self.initial_vector = sorted(self.initial_vector)
+        self.order()
 
     def merge(self, vector_obj):
         par_vector = vector_obj.initial_vector
