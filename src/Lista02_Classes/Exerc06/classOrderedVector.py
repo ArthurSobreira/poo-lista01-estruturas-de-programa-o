@@ -14,4 +14,4 @@ class OrderedVector(Vector):
         par_vector = vector_obj.initial_vector
         main_vector = self.initial_vector
         new_obj = OrderedVector(par_vector + main_vector)
-        return new_obj
+        return new_obj.order()
