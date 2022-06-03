@@ -76,7 +76,7 @@ def main():
                 print(f'\033[32mThe list is empty, please insert an element!\033[m')
             else:
                 while True:
-                    index = input_number('Enter the element index: ')
+                    index = input_number('> Enter the element index: ')
                     element = main_vector.get_element(index)
                     if element:
                         print(f'\033[32mThe element at index {index} is {element}.\033[m')
