@@ -6,3 +6,8 @@ class OrderedVector(Vector):
         self.initial_vector.append(string)
         self.initial_vector = sorted(self.initial_vector)
 
+    def merge(self, vector_obj):
+        par_vector = vector_obj.initial_vector
+        main_vector = self.initial_vector
+        new_obj = OrderedVector(par_vector + main_vector)
+        return new_obj
