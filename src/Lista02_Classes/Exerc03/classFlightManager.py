@@ -56,12 +56,11 @@ class FlightManager(Flight):
 
     def number_vacancies(self):
         amount = 0
-        df = pd.DataFrame(self.seats_list)
+        df = self.seat_map()
         for c in self.seats_list:
             freq = df.groupby([c]).size()
             amount += freq.values[0]
         return amount
 
     def seat_map(self):
-        apart('Seat Map', 50)
         return pd.DataFrame(self.seats_list)
