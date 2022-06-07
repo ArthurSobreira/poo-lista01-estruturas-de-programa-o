@@ -2,8 +2,8 @@ from src.Lista02_Classes.Exerc04.classAnswerSheet import AnswerSheet
 
 
 class Exam:
-    def __init__(self, ans_list):
-        self.__student_answers = AnswerSheet(ans_list)
+    def __init__(self, stu_ans_list):
+        self.__student_answers = AnswerSheet(stu_ans_list)
 
     def __str__(self):
         return self.student_answers
