@@ -3,7 +3,7 @@ from string import ascii_lowercase
 
 class AnswerSheet:
     def __init__(self, answers_list):
-        answers_dic = {}
+        answers_dic = dict()
         if len(answers_list) == 15:
             for question, answer in enumerate(answers_list):
                 if answer.lower() in ascii_lowercase[:5]:
@@ -22,4 +22,7 @@ class AnswerSheet:
 
     # Instance Method
     def right_answer(self, question):
-        return self.answer_sheet[question]
+        try:
+            return self.answer_sheet[question]
+        except (TypeError, ValueError, KeyError):
+            return 0
