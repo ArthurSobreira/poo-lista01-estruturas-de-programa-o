@@ -24,5 +24,5 @@ class AnswerSheet:
     def right_answer(self, question):
         try:
             return self.answer_sheet[question]
-        except (TypeError, ValueError, KeyError):
+        except KeyError:
             return 0
