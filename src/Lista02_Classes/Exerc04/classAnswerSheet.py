@@ -1,4 +1,5 @@
-from string import ascii_lowercase
+from string import ascii_lowercase, ascii_uppercase
+import pandas as pd
 
 
 class AnswerSheet:
@@ -10,6 +11,20 @@ class AnswerSheet:
                     answers_dic[question + 1] = answer
 
         self.__answer_sheet = answers_dic
+
+    def __str__(self):
+        # Create Template
+        letters = list(ascii_uppercase[:5])
+        answer_sht = dict()
+        for c in letters:
+            answer_sht[c] = list('.' * 15)
+
+        # Occupy Answer Sheet
+        for q, l in enumerate(self.answer_sheet):
+            answer_sht[self.answer_sheet[l].upper()][q] = 'X'
+
+        # Return DataFrame of Answer Sheet
+        return str(pd.DataFrame(answer_sht).rename(index=lambda x: x + 1))
 
     # Getter and Setter __answer_sheet
     @property
