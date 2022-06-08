@@ -1,6 +1,4 @@
 from src.Lista02_Classes.Exerc04.classExam import Exam, AnswerSheet
-from string import ascii_uppercase
-import pandas as pd
 
 
 class ExamManager(Exam):
@@ -49,17 +47,3 @@ class ExamManager(Exam):
         if answers_obj.exam_grade() > self.exam_grade():
             return answers_obj.exam_grade()
         return self.exam_grade()
-
-    def print_answer_sheet(self):
-        # Create Template
-        letters = list(ascii_uppercase[:5])
-        quest = dict()
-        for c in letters:
-            quest[c] = list('.' * 15)
-
-        # Occupy Answer Sheet
-        for q, l in enumerate(self.student_answers):
-            quest[self.student_answers[l].upper()][q] = 'X'
-
-        # Print Answer Sheet with DataFrame
-        print(pd.DataFrame(quest).rename(index=lambda x: x + 1))
