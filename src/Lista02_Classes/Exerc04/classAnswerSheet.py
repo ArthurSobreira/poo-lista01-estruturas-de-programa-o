@@ -11,9 +11,6 @@ class AnswerSheet:
 
         self.__answer_sheet = answers_dic
 
-    def __str__(self):
-        return str(self.answer_sheet)
-
     # Getter and Setter __answer_sheet
     @property
     def answer_sheet(self):
