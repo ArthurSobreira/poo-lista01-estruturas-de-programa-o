@@ -5,9 +5,6 @@ class Exam:
     def __init__(self, stu_ans_list):
         self.__student_answers = AnswerSheet(stu_ans_list).answer_sheet
 
-    def __str__(self):
-        return self.student_answers
-
     @property
     def student_answers(self):
         return self.__student_answers
