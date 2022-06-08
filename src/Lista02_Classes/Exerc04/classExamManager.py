@@ -27,20 +27,25 @@ class ExamManager(Exam):
         return num_right_ans
 
     def exam_grade(self):
+        grd = 0
         for key in range(1, 16):
-            if key <= 10:
-                pass
-            else:
-                pass
+            if self.answer_list[key] == self.student_answers[key]:
+                if key <= 10:
+                    grd += 0.5
+                else:
+                    grd += 1
+        return grd
 
     def highest_grade(self):
         pass
 
 
 if __name__ == '__main__':
-    li_es = ['b', 'b', 'e', 'd', 'e', 'a', 'b', 'c', 'd', 'a', 'a', 'b', 'c', 'd', 'e']
-    li_main = ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e']
+    li_es = ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'a', 'c', 'a', 'c', 'd', 'e']
+    li_main = ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'a', 'a', 'b', 'c', 'd', 'e']
     t = ExamManager(li_es, li_main)
     print(t.answer_list)
     print(t.student_answers)
     print(t.number_right_answers())
+    print(t.exam_grade())
+
