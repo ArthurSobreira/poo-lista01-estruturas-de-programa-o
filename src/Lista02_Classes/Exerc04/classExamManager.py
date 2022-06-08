@@ -4,23 +4,24 @@ from src.Lista02_Classes.Exerc04.classExam import Exam, AnswerSheet
 class ExamManager(Exam):
     def __init__(self, stu_ans_list, ans_list):
         super().__init__(stu_ans_list)
-        self.__answer_list = AnswerSheet(ans_list).answer_sheet
+        self.__obj = AnswerSheet(ans_list)
+        self.print_ans_list = AnswerSheet(ans_list).__str__()
 
     # Getter and Setter __answer_list
     @property
     def answer_list(self):
-        return self.__answer_list
+        return self.__obj.answer_sheet
 
     @answer_list.setter
     def answer_list(self, new_answer_list):
-        self.__answer_list = new_answer_list
+        self.__obj.answer_sheet = new_answer_list
 
     # Main Methods
     def same_answer(self, ind):
         if self.answer_list[ind] == self.student_answers[ind]:
             return True
 
-    def student_answer(self, question):
+    def question_answer(self, question):
         try:
             return self.student_answers[question]
         except (IndexError, KeyError):
