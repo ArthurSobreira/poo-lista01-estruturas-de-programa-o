@@ -16,20 +16,24 @@ class ExamManager(Exam):
         self.__answer_list = new_answer_list
 
     # Main Methods
+    def same_answer(self, ind):
+        if self.answer_list[ind] == self.student_answers[ind]:
+            return True
+
     def student_answer(self):
         pass
 
     def number_right_answers(self):
         num_right_ans = 0
         for key in range(1, 16):
-            if self.answer_list[key] == self.student_answers[key]:
+            if self.same_answer(key):
                 num_right_ans += 1
         return num_right_ans
 
     def exam_grade(self):
         grd = 0
         for key in range(1, 16):
-            if self.answer_list[key] == self.student_answers[key]:
+            if self.same_answer(key):
                 if key <= 10:
                     grd += 0.5
                 else:
