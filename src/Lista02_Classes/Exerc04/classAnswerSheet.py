@@ -22,10 +22,3 @@ class AnswerSheet:
     @answer_sheet.setter
     def answer_sheet(self, new_answer_sheet):
         self.__answer_sheet = new_answer_sheet
-
-    # Instance Method
-    def right_answer(self, question):
-        try:
-            return self.answer_sheet[question]
-        except KeyError:
-            return 0
