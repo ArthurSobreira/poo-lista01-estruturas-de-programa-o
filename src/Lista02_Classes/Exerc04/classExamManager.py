@@ -20,8 +20,11 @@ class ExamManager(Exam):
         if self.answer_list[ind] == self.student_answers[ind]:
             return True
 
-    def student_answer(self):
-        pass
+    def student_answer(self, question):
+        try:
+            return self.student_answers[question]
+        except (IndexError, KeyError):
+            return 0
 
     def number_right_answers(self):
         num_right_ans = 0
