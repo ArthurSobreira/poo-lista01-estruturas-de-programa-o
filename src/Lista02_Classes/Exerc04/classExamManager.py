@@ -43,16 +43,7 @@ class ExamManager(Exam):
                     grd += 1
         return grd
 
-    def highest_grade(self):
-        pass
-
-
-if __name__ == '__main__':
-    li_es = ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'a', 'c', 'a', 'c', 'd', 'e']
-    li_main = ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'a', 'a', 'b', 'c', 'd', 'e']
-    t = ExamManager(li_es, li_main)
-    print(t.answer_list)
-    print(t.student_answers)
-    print(t.number_right_answers())
-    print(t.exam_grade())
-
+    def highest_grade(self, answers_obj):
+        if answers_obj.exam_grade() > self.exam_grade():
+            return answers_obj.exam_grade()
+        return self.exam_grade()
