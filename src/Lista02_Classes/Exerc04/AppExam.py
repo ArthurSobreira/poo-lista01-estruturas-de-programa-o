@@ -1,6 +1,7 @@
-#from src.Lista02_Classes.Exerc04.classExamManager import ExamManager
+from src.Lista02_Classes.Exerc04.classExamManager import ExamManager
 from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import input_number
 from string import ascii_lowercase
+from random import choice
 
 
 def answers_list():
@@ -15,6 +16,11 @@ def answers_list():
     return ans_list
 
 
-if __name__ == '__main__':
-    main_list = answers_list()
-    print(main_list)
+def input_answers_list():
+    exam_answers = list()
+    for c in range(15):
+        alt = choice(ascii_lowercase[:5])
+        exam_answers.append(alt)
+    stud_answers = answers_list()
+    return ExamManager(stud_answers, exam_answers)
+
