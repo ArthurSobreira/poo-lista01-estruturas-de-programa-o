@@ -5,6 +5,7 @@ class ExamManager(Exam):
     def __init__(self, stu_ans_list, ans_list):
         super().__init__(stu_ans_list)
         self.__obj = AnswerSheet(ans_list)
+        self.simple_list = ans_list
         self.print_ans_list = AnswerSheet(ans_list).__str__()
 
     # Getter and Setter __answer_list
