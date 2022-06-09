@@ -32,8 +32,8 @@ def main():
     while True:
         print('=' * 50)
         select = input_number(
-            "1 - View answer for a specific question;\n"
-            "2 - ;\n"
+            "1 - Answer for a specific question;\n"
+            "2 - Number of correct answers;\n"
             "3 - ;\n"
             "4 - ;\n"
             "5 - ;\n"
@@ -45,9 +45,13 @@ def main():
                 quest = input_number('> Enter the question number: ')
                 ans = main_exam.question_answer(quest)
                 if ans != 0:
-                    print(f'\033[32mThe answer to question {quest} is {str(ans).upper()}.\033[m')
+                    print(f'\033[32mThe answer to question {quest} is {str(ans).upper()}\033[m')
                     break
                 print('\033[31mOnly enter numbers between 1-15!\033[m')
+
+        if select == 2:
+            correct_ans = main_exam.number_right_answers()
+            print(f'\033[32mCorrect Answers: {correct_ans}/15\033[ma')
 
 
 if __name__ == '__main__':
