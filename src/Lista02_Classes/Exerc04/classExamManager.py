@@ -36,16 +36,11 @@ class ExamManager(Exam):
         return num_right_ans
 
     def exam_grade(self):
-        grd = 0
+        grade = 0
         for key in range(1, 16):
             if self.same_answer(key):
                 if key <= 10:
-                    grd += 0.5
+                    grade += 0.5
                 else:
-                    grd += 1
-        return grd
-
-    def highest_grade(self, answers_obj):
-        if answers_obj.exam_grade() > self.exam_grade():
-            return answers_obj.exam_grade()
-        return self.exam_grade()
+                    grade += 1
+        return grade
