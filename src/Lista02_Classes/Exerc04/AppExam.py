@@ -35,7 +35,7 @@ def main():
             "1 - Answer for a specific question;\n"
             "2 - Number of correct answers;\n"
             "3 - Exam grade;\n"
-            "4 - Print answers sheet;\n"
+            "4 - Print answer keys;\n"
             "5 - Print student answers sheet;\n"
             "6 - Exit.\n"
             "> ")
