@@ -1,11 +1,6 @@
 from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import input_number
+from src.Lista02_Classes.Exerc01.AppStudent import apart
 from src.Lista02_Classes.Exerc02.classDate import Date
-
-
-def apart(msg, size):
-    print('=' * size)
-    print(f'{msg:^{size}}')
-    print('=' * size)
 
 
 def date_input():
