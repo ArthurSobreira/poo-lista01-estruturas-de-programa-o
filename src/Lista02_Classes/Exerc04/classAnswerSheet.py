@@ -26,6 +26,9 @@ class AnswerSheet:
         # Return DataFrame of Answer Sheet
         return str(pd.DataFrame(answer_sht).rename(index=lambda x: x + 1))
 
+    def __getitem__(self, index):
+        return self.answer_sheet[index]
+
     # Getter and Setter __answer_sheet
     @property
     def answer_sheet(self):
