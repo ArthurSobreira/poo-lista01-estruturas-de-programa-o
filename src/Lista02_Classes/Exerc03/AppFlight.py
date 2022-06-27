@@ -45,14 +45,14 @@ def main():
             "6 - Exit.\n"
             "> ")
         if choice == 1:
+            apart('Seat Map', 50)
             print(main_flight.seat_map())
 
         if choice == 2:
             main_flight.occupy_seat()
 
         if choice == 3:
-            vac = main_flight.number_vacancies()
-            print(f'\033[32mThere are {vac} seats available.\033[m')
+            main_flight.number_vacancies()
 
         if choice == 4:
             st = seat_input('> Enter seat number (Ex: A2): ')
