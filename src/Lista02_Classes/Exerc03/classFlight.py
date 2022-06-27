@@ -1,3 +1,4 @@
+from src.Lista02_Classes.Exerc02.AppDate import apart
 from src.Lista02_Classes.Exerc02.classDate import Date
 from string import ascii_uppercase
 import pandas as pd
@@ -33,6 +34,34 @@ class Flight:
         return self.__date
 
     # Main Methods
+    @staticmethod
+    def seat_input(msg):
+        while True:
+            seat = str(input(msg)).strip().upper()
+            try:
+                if (seat[0].isalpha()) and (seat[1:].isalnum()):
+                    valid_letters = list(ascii_uppercase[:6])
+                    if (str(seat[0]) in valid_letters) and (int(seat[1:]) in range(0, 16)):
+                        return seat
+                print('\033[31mInvalid seat value, Try Again!\033[m')
+                continue
+            except (ValueError, TypeError):
+                print('\033[31mInvalid seat value, Try Again!\033[m')
+                continue
+
+    def seat_map(self):
+        apart('Seat Map', 50)
+        return pd.DataFrame(self.seats_list)
+
+    def occupy_seat(self):
+        st = self.seat_input('> Enter seat number (Ex: A2): ')
+        column, row = str(st[0]), int(st[1:])
+        if not self.check_occupancy(st):
+            self.seats_list[column][row] = 'X'
+            print(f'\033[32mSeat {st} has been occupied.\033[m')
+        else:
+            print(f'\033[32mIt is not possible to occupy the seat {st}.\033[m')
+
     def next_vacant_seat(self, seat):
         column, row = str(seat[0]), int(seat[1:])
         closest_value = []
@@ -62,13 +91,6 @@ class Flight:
             occupation = True
         return occupation
 
-    def occupy_seat(self, seat):
-        column, row = str(seat[0]), int(seat[1:])
-        if not self.check_occupancy(seat):
-            self.seats_list[column][row] = 'X'
-            return True
-        return False
-
     def number_vacancies(self):
         amount = 0
         df = self.seat_map()
@@ -76,6 +98,3 @@ class Flight:
             freq = df.groupby([c]).size()
             amount += freq.values[0]
         return amount
-
-    def seat_map(self):
-        return pd.DataFrame(self.seats_list)
