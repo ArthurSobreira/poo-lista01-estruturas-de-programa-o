@@ -1,5 +1,5 @@
-from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import *
-from src.Lista02_Classes.Exerc02.classDateAttributes import DateAttributes
+from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import input_number
+from src.Lista02_Classes.Exerc02.classDate import Date
 
 
 def apart(msg, size):
@@ -12,8 +12,8 @@ def date_input():
     day = input_number('> Day: ')
     mon = input_number('> Month (Number): ')
     year = input_number('> Year: ')
-    my_date = DateAttributes(day, mon, year)
-    if my_date.__str__() == '01/01/0001':
+    my_date = Date(day, mon, year)
+    if str(my_date) == '01/01/0001':
         print(f'Invalid Date, it will be set to {my_date}.')
     else:
         print(f'Date defined as {my_date}.')
