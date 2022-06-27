@@ -1,4 +1,4 @@
-from classStudent import Student
+from src.Lista02_Classes.Exerc01.classStudent import Student
 from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import *
 
 
