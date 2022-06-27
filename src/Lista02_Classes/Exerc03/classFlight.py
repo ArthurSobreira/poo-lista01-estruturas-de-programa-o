@@ -50,7 +50,6 @@ class Flight:
                 continue
 
     def seat_map(self):
-        apart('Seat Map', 50)
         return pd.DataFrame(self.seats_list)
 
     def occupy_seat(self):
@@ -61,6 +60,15 @@ class Flight:
             print(f'\033[32mSeat {st} has been occupied.\033[m')
         else:
             print(f'\033[32mIt is not possible to occupy the seat {st}.\033[m')
+
+    def number_vacancies(self):
+        amount = 0
+        df = self.seat_map()
+        for c in self.seats_list:
+            freq = df.groupby([c]).size()
+            amount += freq.values[0]
+
+        print(f'\033[32mThere are {amount} seats available.\033[m')
 
     def next_vacant_seat(self, seat):
         column, row = str(seat[0]), int(seat[1:])
@@ -90,11 +98,3 @@ class Flight:
         if self.seats_list[column][row] == 'X':
             occupation = True
         return occupation
-
-    def number_vacancies(self):
-        amount = 0
-        df = self.seat_map()
-        for c in self.seats_list:
-            freq = df.groupby([c]).size()
-            amount += freq.values[0]
-        return amount
