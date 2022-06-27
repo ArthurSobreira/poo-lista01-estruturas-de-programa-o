@@ -49,3 +49,21 @@ class Date:
         if ((year % 4 == 0) and (year % 100 != 0)) or (year % 400 == 0):
             return True
         return False
+
+    def compare(self, _date):
+        date_1 = date(self.year, self.month, self.day)
+        date_2 = date(_date.year, _date.month, _date.day)
+        if date_1 == date_2:
+            return 0
+        if date_1 > date_2:
+            return 1
+        return -1
+
+    def month_by_name(self):
+        month_list = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
+                      'august', 'september', 'october', 'november', 'december']
+        return month_list[self.month - 1].title()
+
+    def clone(self):
+        date_clone = Date(self.day, self.month, self.year)
+        return date_clone
