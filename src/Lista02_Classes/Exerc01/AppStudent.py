@@ -1,4 +1,4 @@
-from classStudentGrades import StudentsGrades
+from classStudent import Student
 from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import *
 
 
@@ -15,7 +15,7 @@ def register():
     grade_1 = input_number('Enter the exam grade 1: ', float)
     grade_2 = input_number('Enter the exam grade 2: ', float)
     work_grade = input_number('Enter the work grade: ', float)
-    return StudentsGrades(reg, name, grade_1, grade_2, work_grade)
+    return Student(reg, name, grade_1, grade_2, work_grade)
 
 
 def main():
@@ -29,8 +29,7 @@ def main():
                 "4 - Exit.\n"
                 "> ")
         if choice == 1:
-            note = student.average()
-            print(f"> {student.name} average: {note:.2f}")
+            student.average()
             continue
         if choice == 2:
             student.final(student.average())

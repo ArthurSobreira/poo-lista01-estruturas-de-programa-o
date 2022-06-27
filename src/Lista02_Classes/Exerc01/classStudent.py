@@ -41,3 +41,16 @@ class Student:
     @work_grade.setter
     def work_grade(self, new_grade):
         self.__work_grade = new_grade
+
+    def average(self):
+        test_sum = ((self.exam_1_grade + self.exam_2_grade) * 8) / 20
+        work_sum = (self.work_grade * 2) / 10
+        final_grade = test_sum + work_sum
+        print(f"> {self.name}'s average: {final_grade:.2f}")
+
+    def final(self, grade):
+        if grade >= 6:
+            print(f'The student {self.name} is not get held back.')
+        else:
+            final_test = 12 - grade
+            print(f'The student {self.name} must get a {final_test} on the final exam to pass.')
