@@ -1,11 +1,11 @@
 from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import input_number
-from src.Lista02_Classes.Exerc04.classExamManager import ExamManager
+from src.Lista02_Classes.Exerc04.classExam import Exam
 from src.Lista02_Classes.Exerc02.AppDate import apart
 from string import ascii_lowercase
 from random import choice
 
 
-def answers_list():
+def student_answer_list():
     ans_list = list()
     for c in range(1, 16):
         while True:
@@ -22,8 +22,8 @@ def input_answers_list():
     for c in range(15):
         alt = choice(ascii_lowercase[:5])
         exam_answers.append(alt)
-    stud_answers = answers_list()
-    return ExamManager(stud_answers, exam_answers)
+    stud_answers = student_answer_list()
+    return Exam(stud_answers, exam_answers)
 
 
 def main():
@@ -59,12 +59,12 @@ def main():
 
         if select == 4:
             print('=' * 50)
-            form_ans_sht = main_exam.print_ans_list
+            form_ans_sht = str(main_exam.answers_keys)
             print(form_ans_sht)
 
         if select == 5:
             print('=' * 50)
-            form_ans_sht = main_exam.print_stu_ans_list
+            form_ans_sht = str(main_exam.student_answers)
             print(form_ans_sht)
 
         if select == 6:
