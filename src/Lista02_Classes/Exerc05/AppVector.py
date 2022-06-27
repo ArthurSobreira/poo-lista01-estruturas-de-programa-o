@@ -1,6 +1,6 @@
 from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import input_number
 from src.Lista02_Classes.Exerc02.AppDate import apart
-from src.Lista02_Classes.Exerc05.classVectorManager import VectorManage
+from src.Lista02_Classes.Exerc05.classVector import Vector
 
 
 def remove(string):
@@ -54,7 +54,7 @@ def vector_input(msg, num=True):
 def main():
     apart('Welcome to Vector Manager', 50)
     vctr = vector_input('Enter the vector (Ex: [x, y]): ')
-    main_vector = VectorManage(vctr)
+    main_vector = Vector(vctr)
     while True:
         print('=' * 50)
         choice = input_number(
@@ -72,19 +72,19 @@ def main():
             main_vector.insert(new_element)
 
         if choice == 2:
-            if main_vector.vector_size() == 0:
+            if len(main_vector) == 0:
                 print(f'\033[32mThe list is empty, please insert an element!\033[m')
             else:
                 while True:
                     index = input_number('> Enter the element index: ')
-                    element = main_vector.get_element(index)
+                    element = main_vector[index]
                     if element:
                         print(f'\033[32mThe element at index {index} is {element}.\033[m')
                         break
                     print(f'\033[31mIndex out of vector range, try again!\033[m')
 
         if choice == 3:
-            lght = main_vector.vector_size()
+            lght = len(main_vector)
             print(f'> \033[32m The vector has {lght} elements.\033[m')
 
         if choice == 4:
