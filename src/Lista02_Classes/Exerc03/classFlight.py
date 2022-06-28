@@ -79,24 +79,29 @@ class Flight:
                 print(f'\033[32mSeat {seat} is empty.\033[m')
             return False
 
-    def next_vacant_seat(self, seat):
-        column, row = str(seat[0]), int(seat[1:])
-        closest_value = []
-        for num, c in enumerate(self.seats_list[column]):
-            if c == '.':
-                if num < row:
-                    diff = row - num
-                    closest_value.append(diff)
-                if num > row:
-                    diff = num - row
-                    closest_value.append(diff)
+    def next_vacant_seat(self):
+        st = self.seat_input('> Enter seat number (Ex: A2): ')
+        if self.check_occupancy(st):
+            print('\033[32mEnter a vacant seat.\033[m')
+        else:
+            column, row = str(st[0]), int(st[1:])
+            closest_value = []
+            for num, c in enumerate(self.seats_list[column]):
+                if c == '.':
+                    if num < row:
+                        diff = row - num
+                        closest_value.append(diff)
+                    if num > row:
+                        diff = num - row
+                        closest_value.append(diff)
 
-        if len(closest_value) == 0:  # There are no vacant seats
-            return False
+            if len(closest_value) == 0:  # There are no vacant seats
+                print('\033[32mThere are no vacant seats in the column.\033[m')
 
-        closest_value = sorted(closest_value, key=int)
-        lower = closest_value[0]
-        closest_seat = row + lower
-        if (closest_seat > 15) or (self.check_occupancy(f'{column}{closest_seat}')):
-            closest_seat = row - lower
-        return f'{column}{closest_seat}'
+            else:
+                closest_value = sorted(closest_value, key=int)
+                lower = closest_value[0]
+                closest_seat = row + lower
+                if (closest_seat > 15) or (self.check_occupancy(f'{column}{closest_seat}')):
+                    closest_seat = row - lower
+                print(f'\033[32mThe closest vacant seat is {column}{closest_seat}.\033[m')
