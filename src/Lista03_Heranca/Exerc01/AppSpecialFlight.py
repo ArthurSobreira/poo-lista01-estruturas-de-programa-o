@@ -32,7 +32,9 @@ def main():
             "3 - Number of vacant seats;\n"
             "4 - Check if a seat is occupied;\n"
             "5 - Next vacant seat;\n"
-            "6 - Exit.\n"
+            "6 - Number of smoking seats;\n"
+            "7 - Seat type (smoker or not);\n"
+            "8 - Exit.\n"
             "> ")
         if choice == 1:
             apart('Seat Map', 50)
@@ -52,10 +54,16 @@ def main():
             main_flight.next_vacant_seat()
 
         if choice == 6:
+            main_flight.number_smoking_seats()
+
+        if choice == 7:
+            main_flight.seat_type()
+
+        if choice == 8:
             apart('End of the Program, always come back!', 50)
             break
 
-        if (choice < 1) or (choice > 6):
+        if (choice < 1) or (choice > 8):
             print('\033[31mInvalid Value, Try Again!\033[m')
 
 
