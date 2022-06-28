@@ -10,7 +10,7 @@ class Flight:
         for c in letters:
             seats[c] = list('.' * 16)
 
-        self.seats_list = seats
+        self.__seats_list = seats
         self.__number = number
         self.__date = Date(date['day'], date['month'], date['year'])
 
@@ -26,6 +26,15 @@ class Flight:
     @number.setter
     def number(self, new_number):
         self.__number = new_number
+
+    # Getter and Setter __seats_list
+    @property
+    def seats_list(self):
+        return self.__seats_list
+
+    @seats_list.setter
+    def seats_list(self, new_seats_list):
+        self.__seats_list = new_seats_list
 
     # Getter __date
     @property
