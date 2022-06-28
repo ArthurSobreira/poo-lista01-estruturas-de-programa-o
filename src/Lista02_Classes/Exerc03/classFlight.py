@@ -67,8 +67,18 @@ class Flight:
         for c in self.seats_list:
             freq = df.groupby([c]).size()
             amount += freq.values[0]
-
         print(f'\033[32mThere are {amount} seats available.\033[m')
+
+    def check_occupancy(self, seat, prt=False):
+        column, row = str(seat[0]), int(seat[1:])
+        if self.seats_list[column][row] == 'X':
+            if prt:
+                print(f'\033[32mSeat {seat} is occupied.\033[m')
+            return True
+        else:
+            if prt:
+                print(f'\033[32mSeat {seat} is empty.\033[m')
+            return False
 
     def next_vacant_seat(self, seat):
         column, row = str(seat[0]), int(seat[1:])
@@ -91,10 +101,3 @@ class Flight:
         if (closest_seat > 15) or (self.check_occupancy(f'{column}{closest_seat}')):
             closest_seat = row - lower
         return f'{column}{closest_seat}'
-
-    def check_occupancy(self, seat):
-        occupation = False
-        column, row = str(seat[0]), int(seat[1:])
-        if self.seats_list[column][row] == 'X':
-            occupation = True
-        return occupation
