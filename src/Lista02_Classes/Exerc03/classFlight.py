@@ -1,4 +1,3 @@
-from src.Lista02_Classes.Exerc02.AppDate import apart
 from src.Lista02_Classes.Exerc02.classDate import Date
 from string import ascii_uppercase
 import pandas as pd
