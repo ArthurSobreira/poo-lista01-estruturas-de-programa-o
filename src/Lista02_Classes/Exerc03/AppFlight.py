@@ -10,8 +10,7 @@ def flight_data_entry():
     month = input_number('> Month (number) ')
     year = input_number('> Year ')
     main_date = {'day': day, 'month': month, 'year': year}
-    flight_data = Flight(num, main_date)
-    return flight_data
+    return Flight(num, main_date)
 
 
 def main():
