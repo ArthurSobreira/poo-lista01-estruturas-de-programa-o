@@ -59,17 +59,7 @@ def main():
             main_flight.check_occupancy(st, prt=True)
 
         if choice == 5:
-            while True:
-                st = seat_input('> Enter seat number (Ex: A2): ')
-                if main_flight.check_occupancy(st):
-                    print('\033[32mEnter a vacant seat.\033[m')
-                else:
-                    if main_flight.next_vacant_seat(st):
-                        st_clos = main_flight.next_vacant_seat(st)
-                        print(f'\033[32mThe closest vacant seat is {st_clos}.\033[m')
-                    else:
-                        print('\033[32mThere are no vacant seats in the column.\033[m')
-                    break
+            main_flight.next_vacant_seat()
 
         if choice == 6:
             apart('End of the Program, always come back!', 50)
