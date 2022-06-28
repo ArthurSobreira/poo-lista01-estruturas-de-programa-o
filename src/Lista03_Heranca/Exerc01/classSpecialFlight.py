@@ -21,6 +21,7 @@ class SpecialFlight(Flight):
     def row_smoking_seats(self, new_row_sts):
         self.__row_smoking_seats = new_row_sts
 
+    # Main Methods
     def number_vacancies(self):
         vacant_seats = 0
         for col in ascii_uppercase[:6]:
