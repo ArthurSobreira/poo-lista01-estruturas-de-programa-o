@@ -54,6 +54,6 @@ class SpecialFlight(Flight):
             smo_rows.append(16 - c)
 
         if row in smo_rows:
-            print(f'\033[32m{st} is a smoking seat.')
+            print(f'\033[32m{st} is a smoking seat')
         else:
             print(f'\033[32m{st} is a non-smoking seat.')
