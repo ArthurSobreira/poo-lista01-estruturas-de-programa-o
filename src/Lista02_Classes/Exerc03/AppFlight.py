@@ -1,22 +1,6 @@
 from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import input_number
 from src.Lista02_Classes.Exerc02.AppDate import apart
-from string import ascii_uppercase
 from src.Lista02_Classes.Exerc03.classFlight import Flight
-
-
-def seat_input(msg):
-    while True:
-        seat = str(input(msg)).strip().upper()
-        try:
-            if (seat[0].isalpha()) and (seat[1:].isalnum()):
-                valid_letters = list(ascii_uppercase[:6])
-                if (str(seat[0]) in valid_letters) and (int(seat[1:]) in range(0, 16)):
-                    return seat
-            print('\033[31mInvalid seat value, Try Again!\033[m')
-            continue
-        except (ValueError, TypeError):
-            print('\033[31mInvalid seat value, Try Again!\033[m')
-            continue
 
 
 def flight_data_entry():
@@ -55,7 +39,7 @@ def main():
             main_flight.number_vacancies()
 
         if choice == 4:
-            st = seat_input('> Enter seat number (Ex: A2): ')
+            st = main_flight.seat_input('> Enter seat number (Ex: A2): ')
             main_flight.check_occupancy(st, prt=True)
 
         if choice == 5:
