@@ -56,10 +56,7 @@ def main():
 
         if choice == 4:
             st = seat_input('> Enter seat number (Ex: A2): ')
-            if main_flight.check_occupancy(st):
-                print(f'\033[32mSeat {st} is occupied.\033[m')
-            else:
-                print(f'\033[32mSeat {st} is empty.\033[m')
+            main_flight.check_occupancy(st, prt=True)
 
         if choice == 5:
             while True:
