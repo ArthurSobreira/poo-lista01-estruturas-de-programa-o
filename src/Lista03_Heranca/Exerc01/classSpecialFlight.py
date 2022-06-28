@@ -12,6 +12,11 @@ class SpecialFlight(Flight):
                 self.seats_list[col][-seat] = 's'
         self.__row_smoking_seats = row_smoking_seats
 
+    def __str__(self):
+        return f'The flight number was set to: {self.number}\n' \
+               f'The flight date was set to: {self.date}\n' \
+               f'The number of smoking seats was set to: {self.row_smoking_seats * 6}'
+
     # Getter and Setter __row_smoking_seats
     @property
     def row_smoking_seats(self):
