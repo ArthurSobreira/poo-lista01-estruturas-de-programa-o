@@ -1,5 +1,5 @@
 from src.Lista01_EstruturasDeProgramacao.Exerc03_BinaryConverter import input_number
-from src.Lista03_Heranca.Exerc01.classSpecialFlight import SpecialFlight
+from src.Lista02_Classes.Exerc07.classSpecialFlight import SpecialFlight
 from src.Lista02_Classes.Exerc01.AppStudent import apart
 
 
