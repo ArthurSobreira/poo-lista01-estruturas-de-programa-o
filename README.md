@@ -1,6 +1,6 @@
 # Resolução: Listas de Exercícios POO - Universidade Estadual de Campinas (UNICAMP)
 
-* Resolução das Listas de Exercícios 01-06, relacionadas à **Programação Orientada a Objetos**, ministradas pela **Universidade Estadual de Campinas** (UNICAMP), abordando os assuntos: **Estruturas de Programação**, **Classes**, **Herança**, **Polimorfismo**, **Interfaces** e **Design Patterns**.
+* Resolução das Listas de Exercícios 01-06, relacionadas à **Programação Orientada a Objetos**, ministradas pela **Universidade Estadual de Campinas** (UNICAMP), abordando os assuntos: **Estruturas de Programação**, **Classes**, **Herança** e **Polimorfismo**.
 
 * A resolução dos exercícios será feita por meio do **Paradigma Procedural** (utilizando-se funções e variáveis locais) e por meio do **Paradigma Orientado Objeto** (utilizando-se o conceito de classes e objetos), por meio da linguagem de programação Python.  
 
