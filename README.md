@@ -4,4 +4,4 @@
 
 * A resolução dos exercícios será feita por meio do **Paradigma Procedural** (utilizando-se funções e variáveis locais) e por meio do **Paradigma Orientado Objeto** (utilizando-se o conceito de classes e objetos), por meio da linguagem de programação Python.  
 
-* Material elaborado pelo professor André Santanchè (pode ser consultado por meio do [Link](https://www.ic.unicamp.br/~santanch/teaching/oop/2015-1/exercicios.html)).
+* Material elaborado pelo professor André Santanchè (pode ser consultado [**Aqui**](https://www.ic.unicamp.br/~santanch/teaching/oop/2015-1/exercicios.html)).
