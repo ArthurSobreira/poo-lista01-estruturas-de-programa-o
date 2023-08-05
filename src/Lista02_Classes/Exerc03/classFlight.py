@@ -53,7 +53,7 @@ class Flight:
                         return seat
                 print('\033[31mInvalid seat value, Try Again!\033[m')
                 continue
-            except (ValueError, TypeError):
+            except (ValueError, TypeError, IndexError):
                 print('\033[31mInvalid seat value, Try Again!\033[m')
                 continue
 
